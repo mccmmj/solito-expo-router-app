@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1001084598468",
+    "project_id": "solito-expo-router-app",
+    "storage_bucket": "solito-expo-router-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1001084598468:android:b4132508ada118957cb191",
+        "android_client_info": {
+          "package_name": "com.solito.expo_router_android"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFEKgAW-7GXq_6OnWVvP0YMQ5U4zXuGMY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

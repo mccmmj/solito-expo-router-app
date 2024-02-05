@@ -4,6 +4,7 @@
   "main": "index.ts",
   "dependencies": {
     "dripsy": "^4.3.1",
+    "firebase": "latest",
     "moti": "latest",
     "solito": "4.0.1"
   },
