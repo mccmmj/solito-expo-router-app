@@ -80,16 +80,6 @@ export function HomeScreen() {
           Greeting Link
         </TextLink>
         </Row>
-      <Row>
-        <TextLink
-          href="/goals"
-          textProps={{
-            style: sx({ fontSize: 16, fontWeight: 'bold', color: 'blue' }),
-          }}
-        >
-          Goals
-        </TextLink>
-      </Row>
     </View>
   )
 }

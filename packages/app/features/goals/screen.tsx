@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { View, FlatList } from 'dripsy';
 import { StyleSheet, Button } from 'react-native';
 import { TextLink } from 'solito/link'
+import { AuthGate } from '../auth/gate';
 
 
 import GoalItem from './components/GoalItem';
@@ -39,39 +40,41 @@ export function GoalsScreen() {
   }
 
   return (
-    <View sx={styles.appContainer}>
-      <Button
-        title='Add New Goal'
-        color="#5e0acc"
-        onPress={startAddGoalHandler}
-      />
-      <GoalInput
-        onAddGoal={addGoalHandler}
-        onCancel={endAddGoalHandler}
-        visible={modalIsVisible} />
-      <View sx={styles.goalsContainer}>
-        <FlatList
-          data={courseGoals}
-          renderItem={(itemData: any) => {
-            return (
-              <GoalItem
-                text={itemData.item.text}
-                id={itemData.item.id}
-                onDeleteItem={deleteGoalHandler}
-              />
-            )
-          }}
-          keyExtractor={(item: TextItem, _ndx: any) => { return item.id }}
-          alwaysBounceVertical={false}
+    <AuthGate>
+      <View sx={styles.appContainer}>
+        <Button
+          title='Add New Goal'
+          color="#5e0acc"
+          onPress={startAddGoalHandler}
         />
+        <GoalInput
+          onAddGoal={addGoalHandler}
+          onCancel={endAddGoalHandler}
+          visible={modalIsVisible} />
+        <View sx={styles.goalsContainer}>
+          <FlatList
+            data={courseGoals}
+            renderItem={(itemData: any) => {
+              return (
+                <GoalItem
+                  text={itemData.item.text}
+                  id={itemData.item.id}
+                  onDeleteItem={deleteGoalHandler}
+                />
+              )
+            }}
+            keyExtractor={(item: TextItem, _ndx: any) => { return item.id }}
+            alwaysBounceVertical={false}
+          />
+        </View>
+        <View sx={styles.extLinkContainer}>
+          <TextLink href="/webview">👈 Webview</TextLink>
+        </View>
+        <View sx={styles.homeLinkContainer}>
+          <TextLink href="/">👈 Go Home</TextLink>
+        </View>
       </View>
-      <View sx={styles.extLinkContainer}>
-        <TextLink href="/webview">👈 Webview</TextLink>
-      </View>
-      <View sx={styles.homeLinkContainer}>
-        <TextLink href="/">👈 Go Home</TextLink>
-      </View>
-    </View>
+    </AuthGate>
   )
 }
 
